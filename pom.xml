@@ -11,6 +11,9 @@
 	<groupId>com.example</groupId>
 	<artifactId>logs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<configuration>
+		<encoding>UTF-8</encoding>
+	</configuration>
 	<name>logs</name>
 	<description>Demo project for Spring Boot</description>
 
