@@ -11,9 +11,6 @@
 	<groupId>com.example</groupId>
 	<artifactId>logs</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<configuration>
-		<encoding>UTF-8</encoding>
-	</configuration>
 	<name>logs</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -39,6 +36,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
