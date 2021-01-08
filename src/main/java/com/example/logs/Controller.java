@@ -12,6 +12,7 @@ public class Controller {
 
 	@GetMapping("/greeting")
 	public Service greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+		System.out.println("Testing: " + String.format(template, name));
 		return new Service(counter.incrementAndGet(), String.format(template, name));
 	}
 }
