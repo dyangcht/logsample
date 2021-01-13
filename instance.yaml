@@ -17,7 +17,7 @@ spec:
     elasticsearch:
       nodeCount: 3
       storage:
-        storageClassName: ""
+        storageClassName: "gp2-csi"
         size: 200G
       redundancyPolicy: "SingleRedundancy"
   visualization:
@@ -31,4 +31,20 @@ spec:
   collection:
     logs:
       type: "fluentd"
-      fluentd: {}
+      fluentd:
+        buffer:
+          chunkLimitSize: 8m
+          flushInterval: 5s
+          flushMode: interval
+          flushThreadCount: 3
+          overflowAction: throw_exception
+          retryMaxInterval: "300s"
+          retryType: periodic
+          retryWait: 1s
+          totalLimitSize: 32m
+        resources:
+          limits:
+            memory: 736Mi
+          requests:
+            cpu: 100m
+            memory: 736Mi
