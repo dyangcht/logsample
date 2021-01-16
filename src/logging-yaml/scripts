@@ -2,3 +2,7 @@
 oc create -f eo-ns.yaml
 oc create -f clo-ns.yaml
 oc create -f eo-og.yaml
+oc create -f eo-sub.yaml
+oc create -f clo-og.yaml
+oc get csv -n openshift-logging
+oc create -f clo-instance.yaml
