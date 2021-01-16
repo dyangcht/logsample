@@ -16,6 +16,12 @@ spec:
         maxAge: 7d
     elasticsearch:
       nodeCount: 3
+      resources:
+        limits:
+          memory: 16Gi
+        requests:
+          cpu: 500m
+          memory: 16Gi
       storage:
         storageClassName: "gp2-csi"
         size: 200G
@@ -24,9 +30,21 @@ spec:
     type: "kibana"
     kibana:
       replicas: 1
+      resources:
+        limits:
+          memory: 736Mi
+        requests:
+          cpu: 100m
+          memory: 736Mi
   curation:
     type: "curator"
     curator:
+      resources:
+        limits:
+          memory: 256Mi
+        requests:
+          cpu: 100m
+          memory: 256Mi
       schedule: "30 3 * * *"
   collection:
     logs:
